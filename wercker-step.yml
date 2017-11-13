@@ -1,0 +1,8 @@
+name: python-stdeb
+version: 0.0.1
+description: generate debian package using stdeb
+properties:
+  project_root:
+    type: string
+    default: $WERCKER_ROOT
+    required: false
