@@ -1,5 +1,5 @@
 name: python-stdeb
-version: 0.0.3
+version: 0.0.4
 description: generate debian package using stdeb
 properties:
   project_root:
@@ -9,4 +9,8 @@ properties:
   clear_debian_dir:
     type: string
     default: true
+    required: false
+  stdeb_command:
+    type: string
+    default: debianize
     required: false
