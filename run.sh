@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -eu
 
 apt-get install -y devscripts fakeroot python-stdeb
 
