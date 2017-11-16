@@ -1,4 +1,4 @@
-# step-python-stdeb [![wercker status](https://app.wercker.com/status/dcdaf73d36b06f97fd27518921f1ae27/s "wercker status")](https://app.wercker.com/project/bykey/dcdaf73d36b06f97fd27518921f1ae27)
+# step-python-stdeb [![wercker status](https://app.wercker.com/status/a8a4335fc0088713d10306ec5e10e66d/s "wercker status")](https://app.wercker.com/project/bykey/a8a4335fc0088713d10306ec5e10e66d)
 
 Wercker step to create debian package using stdeb
 
