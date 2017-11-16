@@ -15,6 +15,6 @@ build:
   steps:
     - groove-x/python-stdeb:
         project_root: /foo/bar
-        clear_debian_dir: true
+        clear_debian_dir: false
         stdeb_command: bdist_deb
 ```
