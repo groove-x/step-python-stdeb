@@ -16,5 +16,5 @@ NOW=$(date -u +'%Y%m%dT%H%M%SZ')
 cd ${WERCKER_PYTHON_STDEB_PROJECT_ROOT}
 
 python setup.py --command-package=stdeb.command ${WERCKER_PYTHON_STDEB_STDEB_COMMAND}
-sed -i -e "1 s/)/-${NOW})/" debian/changelog
+sed -i -e "s/-1)/-${NOW})/" debian/changelog
 fakeroot debian/rules binary
