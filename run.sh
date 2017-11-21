@@ -4,11 +4,11 @@ set -eu
 
 apt-get install -y devscripts fakeroot python-stdeb
 
-DEBIAN_DIR="${WERCKER_PYTHON_STDEB_PROJECT_ROOT}/debian"
+DEBIAN_SOURCE_DIR="${WERCKER_PYTHON_STDEB_PROJECT_ROOT}/debian/source"
 
-if [ "$WERCKER_PYTHON_STDEB_CLEAR_DEBIAN_DIR" != "false" ]; then
-  if [ -e ${DEBIAN_DIR} ]; then
-    rm -rf ${DEBIAN_DIR}
+if [ "$WERCKER_PYTHON_STDEB_CLEAR_DEBIAN_SOURCE_DIR" != "false" ]; then
+  if [ -e ${DEBIAN_SOURCE_DIR} ]; then
+    rm -rf ${DEBIAN_SOURCE_DIR}
   fi
 fi
 
