@@ -17,7 +17,11 @@ cd ${WERCKER_PYTHON_STDEB_PROJECT_ROOT}
 
 python setup.py --command-package=stdeb.command ${WERCKER_PYTHON_STDEB_STDEB_COMMAND}
 sed -i -e "s/-1)/-${NOW})/" debian/changelog
+
+if [ "$WERCKER_PYTHON_STDEB_CLEAN_DEBIAN_RULES" != "false" ]; then
 fakeroot debian/rules clean
+fi
+
 fakeroot debian/rules binary
 
 if [ -e .pybuild ]; then
