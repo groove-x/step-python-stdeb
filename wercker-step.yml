@@ -1,5 +1,5 @@
 name: python-stdeb
-version: 0.2.5
+version: 0.2.6
 description: generate debian package using stdeb
 properties:
   project_root:
