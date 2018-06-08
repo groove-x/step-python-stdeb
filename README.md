@@ -18,6 +18,6 @@ build:
         clear_debian_dir: false
         clear_pybuild_dir: false
         clean_debian_rules: false
-        stdeb_command: bdist_deb
+        stdeb_command: bdist_deb --with-python3=True
         use_python3: false
 ```
