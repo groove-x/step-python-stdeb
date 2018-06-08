@@ -2,7 +2,12 @@
 
 set -eu
 
-apt-get install -y devscripts fakeroot python-stdeb
+PYTHON_INTERP=python
+if [ "${WERCKER_PYTHON_STDEB_USE_PYTHON3}" == "true" ]; then
+  PYTHON_INTERP+=3
+fi
+
+apt-get install -y devscripts fakeroot ${PYTHON_INTERP}-stdeb
 
 DEBIAN_SOURCE_DIR="${WERCKER_PYTHON_STDEB_PROJECT_ROOT}/debian/source"
 PYBUILD_DIR="${WERCKER_PYTHON_STDEB_PROJECT_ROOT}/.pybuild"
@@ -22,7 +27,7 @@ fi
 NOW=$(date -u +'%Y%m%dT%H%M%SZ')
 cd ${WERCKER_PYTHON_STDEB_PROJECT_ROOT}
 
-(set -x; python setup.py --command-package=stdeb.command ${WERCKER_PYTHON_STDEB_STDEB_COMMAND})
+(set -x; ${PYTHON_INTERP} setup.py --command-package=stdeb.command ${WERCKER_PYTHON_STDEB_STDEB_COMMAND})
 
 if [ "${WERCKER_PYTHON_STDEB_STDEB_COMMAND}" == "debianize" ]; then
   sed -i -e "s/-1)/-${NOW})/" debian/changelog

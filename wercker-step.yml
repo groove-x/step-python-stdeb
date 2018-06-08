@@ -22,3 +22,7 @@ properties:
     type: string
     default: debianize
     required: false
+  use_python3:
+    type: string
+    default: "false"
+    required: false
