@@ -29,7 +29,7 @@ cd ${WERCKER_PYTHON_STDEB_PROJECT_ROOT}
 
 (set -x; ${PYTHON_INTERP} setup.py --command-package=stdeb.command ${WERCKER_PYTHON_STDEB_STDEB_COMMAND})
 
-if [ "${WERCKER_PYTHON_STDEB_STDEB_COMMAND}" == "debianize" ]; then
+if [[ "${WERCKER_PYTHON_STDEB_STDEB_COMMAND}" =~ ^debianize.* ]]; then
   sed -i -e "s/-1)/-${NOW})/" debian/changelog
 fi
 
