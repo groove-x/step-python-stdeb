@@ -19,4 +19,5 @@ build:
         clear_pybuild_dir: false
         clean_debian_rules: false
         stdeb_command: bdist_deb
+        use_python3: false
 ```
